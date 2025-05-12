@@ -10,7 +10,11 @@
  * @brief Backend Ui Example Plugin
  */
 
+namespace APP\plugins\generic\backendUiExample;
+
+use APP\core\Application;
 use PKP\plugins\GenericPlugin;
+use APP\template\TemplateManager;
 use PKP\plugins\Hook;
 use PKP\components\forms\FormComponent;
 use PKP\components\forms\FieldText;
@@ -135,7 +139,7 @@ class BackendUiExamplePlugin extends GenericPlugin {
     public function callbackTemplateManagerDisplay($hookName, $args)
     {
         $templateMgr = $args[0];
-        $request = & Registry::get('request');
+        $request = Application::get()->getRequest();
         $dispatcher = $request->getDispatcher();
         $context = $request->getContext();
         if($request->getRequestedOp() == 'settings') {
