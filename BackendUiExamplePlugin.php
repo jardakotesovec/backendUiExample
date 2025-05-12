@@ -9,9 +9,13 @@
  *
  * @brief Backend Ui Example Plugin
  */
+namespace APP\plugins\generic\backendUiExample;
 
  use PKP\plugins\GenericPlugin;
  use PKP\plugins\Hook;
+ use APP\core\Application;
+ use APP\template\TemplateManager;
+
 
 class BackendUiExamplePlugin extends GenericPlugin {
     /**
@@ -82,7 +86,7 @@ class BackendUiExamplePlugin extends GenericPlugin {
     public function  callbackTemplateManagerDisplay($hookName, $args)
     {
         $templateMgr = $args[0];
-        $request = & Registry::get('request');
+        $request = Application::get()->getRequest();
         $dispatcher = $request->getDispatcher();
         $context = $request->getContext();
 
