@@ -34,6 +34,10 @@ Check out `BuiExampleTab.vue`, where interacting with API using `useFetch` and `
 
 Checkout `main.js` to see how to add custom column or action. Fetching additional data for displayed files is also demonstrated..
 
+### How to add new menu on workflow page with custom content
+
+Checkout `main.js`, particularly extending `getMenuItems` and `getPrimaryItems`.
+
 Also check out generic plugin template https://github.com/pkp/pluginTemplate to see how the cypress test can be written to automatically test your plugin.
 
 ![image illustrating plugin example ui](docs/plugin_ui.png)
