@@ -315,7 +315,12 @@
             const workflowStore = pkp.registry.getPiniaStore("workflow");
             openDialog({
               title: "Custom action on file",
-              message: `Do you want to make custom action on file:${localize(file.name)}. With submission title ${localizeSubmission(workflowStore.submission.publications[0].fullTitle, workflowStore.submission.locale)}`,
+              message: `Do you want to make custom action on file:${localize(
+                file.name
+              )}. With submission title ${localizeSubmission(
+                workflowStore.submission.publications[0].fullTitle,
+                workflowStore.submission.locale
+              )}`,
               actions: [
                 {
                   label: "Yes",
@@ -347,8 +352,7 @@
         {
           key: "buiCustomMenu",
           label: "Custom menu",
-          action: "selectMenu",
-          actionArgs: { primaryMenuItem: "buiCustomMenu" }
+          state: { primaryMenuItem: "buiCustomMenu" }
         }
       ];
       return updatedMenuItems;

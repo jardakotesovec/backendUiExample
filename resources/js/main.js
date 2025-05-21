@@ -109,7 +109,12 @@ pkp.registry.storeExtend("fileManager_SUBMISSION_FILES", (piniaContext) => {
 
           openDialog({
             title: "Custom action on file",
-            message: `Do you want to make custom action on file:${localize(file.name)}. With submission title ${localizeSubmission(workflowStore.submission.publications[0].fullTitle, workflowStore.submission.locale)}`,
+            message: `Do you want to make custom action on file:${localize(
+              file.name
+            )}. With submission title ${localizeSubmission(
+              workflowStore.submission.publications[0].fullTitle,
+              workflowStore.submission.locale
+            )}`,
             actions: [
               {
                 label: "Yes",
@@ -146,8 +151,7 @@ pkp.registry.storeExtend("workflow", (piniaContext) => {
       {
         key: "buiCustomMenu",
         label: "Custom menu",
-        action: "selectMenu",
-        actionArgs: { primaryMenuItem: "buiCustomMenu" },
+        state: { primaryMenuItem: "buiCustomMenu" },
       },
     ];
 
