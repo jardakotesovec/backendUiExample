@@ -17,6 +17,12 @@ pkp.registry.registerComponent(
 
 // File manager extensions
 pkp.registry.storeExtend("fileManager_SUBMISSION_FILES", (piniaContext) => {
+  // Enable this only for Editorial dashboard, not for author
+  const dashboardStore = pkp.registry.getPiniaStore("dashboard");
+  if (dashboardStore.dashboardPage !== "editorialDashboard") {
+    return;
+  }
+
   const { useUrl } = pkp.modules.useUrl;
   const { useFetch } = pkp.modules.useFetch;
 

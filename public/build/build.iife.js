@@ -246,6 +246,10 @@
     _sfc_main$1
   );
   pkp.registry.storeExtend("fileManager_SUBMISSION_FILES", (piniaContext) => {
+    const dashboardStore = pkp.registry.getPiniaStore("dashboard");
+    if (dashboardStore.dashboardPage !== "editorialDashboard") {
+      return;
+    }
     const { useUrl } = pkp.modules.useUrl;
     const { useFetch } = pkp.modules.useFetch;
     const fileStore = piniaContext.store;
