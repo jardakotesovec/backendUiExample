@@ -58,3 +58,15 @@ msgstr "Form Title Example"
 msgid "plugins.generic.backendUiExample.openDialog"
 msgstr "Open Dialog"
 
+msgid "plugins.generic.backendUiExample.openSideModal"
+msgstr "Open SideModal"
+
+msgid "plugins.generic.backendUiExample.sideModalTitle"
+msgstr "Side Modal Example"
+
+msgid "plugins.generic.backendUiExample.sideModalContent"
+msgstr "Content of the side modal"
+
+msgid "plugins.generic.backendUiExample.sideModalSubmit"
+msgstr "Submit & Close"
+

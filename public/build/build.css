@@ -11,3 +11,8 @@ h3[data-v-46d8adf4] {
   font: var(--font-3xl-bold);
   color: var(--text-color-heading);
 }
+
+.buttons[data-v-a6df733a] {
+  display: flex;
+  column-gap: var(--spacing-2);
+}

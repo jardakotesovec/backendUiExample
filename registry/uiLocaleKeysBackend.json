@@ -7,7 +7,11 @@
   "plugins.generic.backendUiExample.localizedTitle",
   "plugins.generic.backendUiExample.localizedTitleDescription",
   "plugins.generic.backendUiExample.openDialog",
+  "plugins.generic.backendUiExample.openSideModal",
   "plugins.generic.backendUiExample.publicationsListing",
   "plugins.generic.backendUiExample.publicationsListing.id",
-  "plugins.generic.backendUiExample.publicationsListing.title"
+  "plugins.generic.backendUiExample.publicationsListing.title",
+  "plugins.generic.backendUiExample.sideModalContent",
+  "plugins.generic.backendUiExample.sideModalSubmit",
+  "plugins.generic.backendUiExample.sideModalTitle"
 ]

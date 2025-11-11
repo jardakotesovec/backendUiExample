@@ -1,17 +1,24 @@
 <template>
   <div>
-    <PkpButton @click="openExampleDialog">{{
-      t("plugins.generic.backendUiExample.openDialog")
-    }}</PkpButton>
+    <div class="buttons">
+      <PkpButton @click="openExampleDialog">{{
+        t("plugins.generic.backendUiExample.openDialog")
+      }}</PkpButton>
+      <PkpButton @click="openExampleSideModal">{{
+        t("plugins.generic.backendUiExample.openSideModal")
+      }}</PkpButton>
+    </div>
   </div>
 </template>
 
 <script setup>
+import BuiExampleSideModal from "./BuiExampleSideModal.vue";
+
 const { useModal } = pkp.modules.useModal;
 const { useLocalize } = pkp.modules.useLocalize;
 
 const { t } = useLocalize();
-const { openDialog } = useModal();
+const { openDialog, openSideModal } = useModal();
 
 function openExampleDialog() {
   openDialog({
@@ -37,4 +44,15 @@ function openExampleDialog() {
     ],
   });
 }
+
+function openExampleSideModal() {
+  openSideModal(BuiExampleSideModal);
+}
 </script>
+
+<style scoped>
+.buttons {
+  display: flex;
+  column-gap: var(--spacing-2);
+}
+</style>

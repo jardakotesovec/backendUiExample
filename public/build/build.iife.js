@@ -7,9 +7,9 @@
     }
     return target;
   };
-  const _hoisted_1$2 = { class: "container" };
+  const _hoisted_1$3 = { class: "container" };
   const _hoisted_2 = ["href"];
-  const _sfc_main$3 = {
+  const _sfc_main$4 = {
     __name: "BuiExampleTab",
     props: { initData: { type: Object, required: true } },
     setup(__props) {
@@ -48,7 +48,7 @@
         const _component_pkp_list = vue.resolveComponent("pkp-list");
         const _component_bui_my_component_with_dialog = vue.resolveComponent("bui-my-component-with-dialog");
         const _component_pkp_form = vue.resolveComponent("pkp-form");
-        return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$2, [
+        return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$3, [
           vue.createElementVNode("h3", null, vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.localizedTitle")), 1),
           vue.createElementVNode("p", null, vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.localizedTitleDescription")), 1),
           _cache[0] || (_cache[0] = vue.createElementVNode("h3", null, "Simple Vue interaction", -1)),
@@ -98,14 +98,53 @@
       };
     }
   };
-  const BuiExampleTab = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-46d8adf4"]]);
+  const BuiExampleTab = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-46d8adf4"]]);
+  const _sfc_main$3 = {
+    __name: "BuiExampleSideModal",
+    setup(__props) {
+      const { useLocalize } = pkp.modules.useLocalize;
+      const closeModal = vue.inject("closeModal");
+      const { t } = useLocalize();
+      function submit() {
+        closeModal();
+      }
+      return (_ctx, _cache) => {
+        const _component_PkpButton = vue.resolveComponent("PkpButton");
+        const _component_PkpSideModalLayoutBasic = vue.resolveComponent("PkpSideModalLayoutBasic");
+        const _component_PkpSideModalBody = vue.resolveComponent("PkpSideModalBody");
+        return vue.openBlock(), vue.createBlock(_component_PkpSideModalBody, null, {
+          title: vue.withCtx(() => [
+            vue.createTextVNode(vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.sideModalTitle")), 1)
+          ]),
+          default: vue.withCtx(() => [
+            vue.createVNode(_component_PkpSideModalLayoutBasic, null, {
+              default: vue.withCtx(() => [
+                vue.createElementVNode("div", null, vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.sideModalContent")), 1),
+                vue.createElementVNode("div", null, [
+                  vue.createVNode(_component_PkpButton, { onClick: submit }, {
+                    default: vue.withCtx(() => [
+                      vue.createTextVNode(vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.sideModalSubmit")), 1)
+                    ]),
+                    _: 1
+                  })
+                ])
+              ]),
+              _: 1
+            })
+          ]),
+          _: 1
+        });
+      };
+    }
+  };
+  const _hoisted_1$2 = { class: "buttons" };
   const _sfc_main$2 = {
     __name: "BuiMyComponentWithDialog",
     setup(__props) {
       const { useModal } = pkp.modules.useModal;
       const { useLocalize } = pkp.modules.useLocalize;
       const { t } = useLocalize();
-      const { openDialog } = useModal();
+      const { openDialog, openSideModal } = useModal();
       function openExampleDialog() {
         openDialog({
           title: t("plugins.generic.backendUiExample.exampleDialog.title"),
@@ -128,19 +167,31 @@
           ]
         });
       }
+      function openExampleSideModal() {
+        openSideModal(_sfc_main$3);
+      }
       return (_ctx, _cache) => {
         const _component_PkpButton = vue.resolveComponent("PkpButton");
         return vue.openBlock(), vue.createElementBlock("div", null, [
-          vue.createVNode(_component_PkpButton, { onClick: openExampleDialog }, {
-            default: vue.withCtx(() => [
-              vue.createTextVNode(vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.openDialog")), 1)
-            ]),
-            _: 1
-          })
+          vue.createElementVNode("div", _hoisted_1$2, [
+            vue.createVNode(_component_PkpButton, { onClick: openExampleDialog }, {
+              default: vue.withCtx(() => [
+                vue.createTextVNode(vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.openDialog")), 1)
+              ]),
+              _: 1
+            }),
+            vue.createVNode(_component_PkpButton, { onClick: openExampleSideModal }, {
+              default: vue.withCtx(() => [
+                vue.createTextVNode(vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.openSideModal")), 1)
+              ]),
+              _: 1
+            })
+          ])
         ]);
       };
     }
   };
+  const BuiMyComponentWithDialog = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-a6df733a"]]);
   const _hoisted_1$1 = { key: 0 };
   const _sfc_main$1 = {
     __name: "BuiFileManagerCellIthenticate",
@@ -238,7 +289,7 @@
   pkp.registry.registerComponent("BuiExampleTab", BuiExampleTab);
   pkp.registry.registerComponent(
     "BuiMyComponentWithDialog",
-    _sfc_main$2
+    BuiMyComponentWithDialog
   );
   pkp.registry.registerComponent("BuiPublicationListing", _sfc_main);
   pkp.registry.registerComponent(

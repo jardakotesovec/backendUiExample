@@ -22,9 +22,11 @@ Additional tab is injected in Settings -> Website -> Setting Example tab
 
 Components in ui-library are globally available with `pkp` prefix. Check for example `BuiPublicationListing.vue`, which is leveraging table component.
 
-### How to use dialog via useModal composable
+### How to use dialog and sideModal via useModal composable
 
-Check out `BuiMyComponentWithDialog.vue` to see example. Another useful example is in main.js, with new custom action for file manager, which also open dialog.
+Check out `BuiMyComponentWithDialog.vue` to see example.
+
+Another useful example is in main.js, with new custom action for file manager, which also open dialog.
 
 ### How to do API data fetching, using useFetch and useUrl composables
 
