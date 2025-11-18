@@ -2,6 +2,9 @@ import BuiExampleTab from "./Components/BuiExampleTab.vue";
 import BuiMyComponentWithDialog from "./Components/BuiMyComponentWithDialog.vue";
 import BuiFileManagerCellIthenticate from "./Components/BuiFileManagerCellIthenticate.vue";
 import BuiPublicationListing from "./Components/BuiPublicationListing.vue";
+import BuiSubmissionWizardExample from "./Components/BuiSubmissionWizardExample.vue";
+import BuiSubmissionWizardReviewExample from "./Components/BuiSubmissionWizardReviewExample.vue";
+
 import { computed, watch } from "vue";
 pkp.registry.registerComponent("BuiPublicationListing", BuiPublicationListing);
 pkp.registry.registerComponent("BuiExampleTab", BuiExampleTab);
@@ -13,6 +16,14 @@ pkp.registry.registerComponent("BuiPublicationListing", BuiPublicationListing);
 pkp.registry.registerComponent(
   "BuiFileManagerCellIthenticate",
   BuiFileManagerCellIthenticate
+);
+pkp.registry.registerComponent(
+  "BuiSubmissionWizardExample",
+  BuiSubmissionWizardExample
+);
+pkp.registry.registerComponent(
+  "BuiSubmissionWizardReviewExample",
+  BuiSubmissionWizardReviewExample
 );
 
 // File manager extensions

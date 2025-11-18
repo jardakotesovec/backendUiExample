@@ -7,9 +7,9 @@
     }
     return target;
   };
-  const _hoisted_1$3 = { class: "container" };
-  const _hoisted_2 = ["href"];
-  const _sfc_main$4 = {
+  const _hoisted_1$5 = { class: "container" };
+  const _hoisted_2$1 = ["href"];
+  const _sfc_main$6 = {
     __name: "BuiExampleTab",
     props: { initData: { type: Object, required: true } },
     setup(__props) {
@@ -48,7 +48,7 @@
         const _component_pkp_list = vue.resolveComponent("pkp-list");
         const _component_bui_my_component_with_dialog = vue.resolveComponent("bui-my-component-with-dialog");
         const _component_pkp_form = vue.resolveComponent("pkp-form");
-        return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$3, [
+        return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$5, [
           vue.createElementVNode("h3", null, vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.localizedTitle")), 1),
           vue.createElementVNode("p", null, vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.localizedTitleDescription")), 1),
           _cache[0] || (_cache[0] = vue.createElementVNode("h3", null, "Simple Vue interaction", -1)),
@@ -70,7 +70,7 @@
                     default: vue.withCtx(() => [
                       vue.createElementVNode("a", {
                         href: issue.publishedUrl
-                      }, vue.toDisplayString(issue.identification), 9, _hoisted_2),
+                      }, vue.toDisplayString(issue.identification), 9, _hoisted_2$1),
                       vue.createVNode(_component_pkp_orderer, {
                         isDraggable: false,
                         itemId: index,
@@ -98,8 +98,8 @@
       };
     }
   };
-  const BuiExampleTab = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-46d8adf4"]]);
-  const _sfc_main$3 = {
+  const BuiExampleTab = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-46d8adf4"]]);
+  const _sfc_main$5 = {
     __name: "BuiExampleSideModal",
     setup(__props) {
       const { useLocalize } = pkp.modules.useLocalize;
@@ -137,8 +137,8 @@
       };
     }
   };
-  const _hoisted_1$2 = { class: "buttons" };
-  const _sfc_main$2 = {
+  const _hoisted_1$4 = { class: "buttons" };
+  const _sfc_main$4 = {
     __name: "BuiMyComponentWithDialog",
     setup(__props) {
       const { useModal } = pkp.modules.useModal;
@@ -168,12 +168,12 @@
         });
       }
       function openExampleSideModal() {
-        openSideModal(_sfc_main$3);
+        openSideModal(_sfc_main$5);
       }
       return (_ctx, _cache) => {
         const _component_PkpButton = vue.resolveComponent("PkpButton");
         return vue.openBlock(), vue.createElementBlock("div", null, [
-          vue.createElementVNode("div", _hoisted_1$2, [
+          vue.createElementVNode("div", _hoisted_1$4, [
             vue.createVNode(_component_PkpButton, { onClick: openExampleDialog }, {
               default: vue.withCtx(() => [
                 vue.createTextVNode(vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.openDialog")), 1)
@@ -191,9 +191,9 @@
       };
     }
   };
-  const BuiMyComponentWithDialog = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-a6df733a"]]);
-  const _hoisted_1$1 = { key: 0 };
-  const _sfc_main$1 = {
+  const BuiMyComponentWithDialog = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-a6df733a"]]);
+  const _hoisted_1$3 = { key: 0 };
+  const _sfc_main$3 = {
     __name: "BuiFileManagerCellIthenticate",
     props: { file: { type: Object, required: true } },
     setup(__props) {
@@ -212,15 +212,15 @@
         const _component_PkpTableCell = vue.resolveComponent("PkpTableCell");
         return vue.openBlock(), vue.createBlock(_component_PkpTableCell, null, {
           default: vue.withCtx(() => [
-            status.value ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_1$1, vue.toDisplayString(status.value), 1)) : (vue.openBlock(), vue.createBlock(_component_PkpSpinner, { key: 1 }))
+            status.value ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_1$3, vue.toDisplayString(status.value), 1)) : (vue.openBlock(), vue.createBlock(_component_PkpSpinner, { key: 1 }))
           ]),
           _: 1
         });
       };
     }
   };
-  const _hoisted_1 = { class: "" };
-  const _sfc_main = {
+  const _hoisted_1$2 = { class: "" };
+  const _sfc_main$2 = {
     __name: "BuiPublicationListing",
     props: { submission: { type: Object, required: true } },
     setup(__props) {
@@ -235,7 +235,7 @@
         const _component_PkpTable = vue.resolveComponent("PkpTable");
         return vue.openBlock(), vue.createBlock(_component_PkpTable, null, {
           label: vue.withCtx(() => [
-            vue.createElementVNode("h3", _hoisted_1, vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.publicationsListing")), 1)
+            vue.createElementVNode("h3", _hoisted_1$2, vue.toDisplayString(vue.unref(t)("plugins.generic.backendUiExample.publicationsListing")), 1)
           ]),
           default: vue.withCtx(() => [
             vue.createVNode(_component_PkpTableHeader, null, {
@@ -285,16 +285,63 @@
       };
     }
   };
-  pkp.registry.registerComponent("BuiPublicationListing", _sfc_main);
+  const _hoisted_1$1 = { class: "container" };
+  const _hoisted_2 = { class: "submission-info" };
+  const _sfc_main$1 = {
+    __name: "BuiSubmissionWizardExample",
+    props: { submissionId: { type: [String, Number], required: true } },
+    setup(__props) {
+      return (_ctx, _cache) => {
+        return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$1, [
+          _cache[0] || (_cache[0] = vue.createElementVNode("h4", null, "Custom Wizard Component", -1)),
+          _cache[1] || (_cache[1] = vue.createElementVNode("p", null, " This is a custom component dynamically injected into the submission wizard. ", -1)),
+          vue.createElementVNode("p", _hoisted_2, "Submission ID: " + vue.toDisplayString(__props.submissionId), 1),
+          _cache[2] || (_cache[2] = vue.createElementVNode("div", { class: "content-area" }, [
+            vue.createElementVNode("p", null, "You can add any custom interactive elements here.")
+          ], -1))
+        ]);
+      };
+    }
+  };
+  const BuiSubmissionWizardExample = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-44c65049"]]);
+  const _hoisted_1 = { class: "review-container" };
+  const _sfc_main = {
+    __name: "BuiSubmissionWizardReviewExample",
+    props: {
+      submissionId: { type: [String, Number], required: true },
+      title: { type: String, default: "Review Component" }
+    },
+    setup(__props) {
+      return (_ctx, _cache) => {
+        return vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [
+          vue.createElementVNode("h3", null, vue.toDisplayString(__props.title), 1),
+          vue.createElementVNode("p", null, "Custom review component for submission ID: " + vue.toDisplayString(__props.submissionId), 1),
+          _cache[0] || (_cache[0] = vue.createElementVNode("div", { class: "review-content" }, [
+            vue.createElementVNode("p", null, " This is an example review component that can be dynamically rendered in the submission wizard review step. ")
+          ], -1))
+        ]);
+      };
+    }
+  };
+  const BuiSubmissionWizardReviewExample = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-dc25f491"]]);
+  pkp.registry.registerComponent("BuiPublicationListing", _sfc_main$2);
   pkp.registry.registerComponent("BuiExampleTab", BuiExampleTab);
   pkp.registry.registerComponent(
     "BuiMyComponentWithDialog",
     BuiMyComponentWithDialog
   );
-  pkp.registry.registerComponent("BuiPublicationListing", _sfc_main);
+  pkp.registry.registerComponent("BuiPublicationListing", _sfc_main$2);
   pkp.registry.registerComponent(
     "BuiFileManagerCellIthenticate",
-    _sfc_main$1
+    _sfc_main$3
+  );
+  pkp.registry.registerComponent(
+    "BuiSubmissionWizardExample",
+    BuiSubmissionWizardExample
+  );
+  pkp.registry.registerComponent(
+    "BuiSubmissionWizardReviewExample",
+    BuiSubmissionWizardReviewExample
   );
   pkp.registry.storeExtend("fileManager_SUBMISSION_FILES", (piniaContext) => {
     const dashboardStore = pkp.registry.getPiniaStore("dashboard");

@@ -50,6 +50,10 @@ class BackendUiExamplePlugin extends GenericPlugin {
                     'contexts' => ['backend']
                 ] );
 
+                // Add steps to submission wizard
+                Hook::add('TemplateManager::display', $this->addToSubmissionWizardSteps(...));
+
+
                  $this->addRoute();
             }
             return true;
@@ -210,5 +214,71 @@ class BackendUiExamplePlugin extends GenericPlugin {
             return false;
         });
     }
+
+    /**
+     * Inject a funding section into the submission wizard steps UI.
+     *
+     * @param string $hookName
+     * @param array $params
+     *
+     * @return bool Hook return value
+     */
+    function addToSubmissionWizardSteps($hookName, $params) {
+        error_log('add to submission wizard steps');
+        $request = Application::get()->getRequest();
+
+        if ($request->getRequestedPage() !== 'submission') {
+            return;
+        }
+
+        if ($request->getRequestedOp() === 'saved') {
+            return;
+        }
+
+        $submission = $request
+            ->getRouter()
+            ->getHandler()
+            ->getAuthorizedContextObject(Application::ASSOC_TYPE_SUBMISSION);
+
+        if (!$submission || !$submission->getData('submissionProgress')) {
+            return;
+        }
+
+        /** @var TemplateManager $templateMgr */
+        $templateMgr = $params[0];
+
+        $steps = $templateMgr->getState('steps');
+        $steps = array_map(function($step) use ($submission) {
+            if ($step['id'] === 'files') {
+                $step['sections'][] = [
+                    'id' => 'buiCustom',
+                    'name' => 'Custom section',
+                    'description' => 'custom description',
+                    'component' => 'BuiSubmissionWizardExample',
+                    'props' => ['submissionId' => $submission->getId()]
+                ];
+            }
+            return $step;
+        }, $steps);
+
+        $templateMgr->setState([
+            'steps' => $steps,
+        ]);
+
+        // Add custom component to reviewSteps
+        $reviewSteps = $templateMgr->getTemplateVars('reviewSteps') ?: [];
+        $reviewSteps[] = [
+            'id' => 'buiReviewCustom',
+            'component' => 'BuiSubmissionWizardReviewExample',
+            'props' => [
+                'submissionId' => $submission->getId(),
+                'title' => "'Custom Review Component'"
+            ]
+        ];
+        $templateMgr->assign('reviewSteps', $reviewSteps);
+
+        return false;
+    }
+
 
 }
