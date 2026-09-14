@@ -14,7 +14,10 @@
       }}</PkpTableColumn>
     </PkpTableHeader>
     <PkpTableBody>
-      <PkpTableRow v-for="publication in submission.publications">
+      <PkpTableRow
+        v-for="publication in submission.publications"
+        :key="publication.id"
+      >
         <PkpTableCell>
           {{ publication.id }}
         </PkpTableCell>
@@ -30,5 +33,5 @@
 const { useLocalize } = pkp.modules.useLocalize;
 
 const { t, localizeSubmission } = useLocalize();
-const props = defineProps({ submission: { type: Object, required: true } });
+defineProps({ submission: { type: Object, required: true } });
 </script>
