@@ -53,7 +53,7 @@ function extractRegexPlugin({ extraKeys } = {}) {
 
         fs.writeFileSync(
           fileOutput,
-          `${JSON.stringify(outputArray, null, 2)}\n`
+          `${JSON.stringify(outputArray, null, 2)}\n`,
         );
         console.log(`Written all existing locale keys to ${fileOutput}`);
       }
@@ -61,4 +61,4 @@ function extractRegexPlugin({ extraKeys } = {}) {
   };
 }
 
-module.exports = extractRegexPlugin;
+export default extractRegexPlugin;

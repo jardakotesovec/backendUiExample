@@ -59,7 +59,7 @@ function arraymove(arr, fromIndex, toIndex) {
   arr.splice(toIndex, 0, element);
 }
 
-const props = defineProps({ initData: { type: Object, required: true } });
+defineProps({ initData: { type: Object, required: true } });
 const count = ref(0);
 
 const { apiUrl } = useUrl("issues");

@@ -10,20 +10,20 @@ pkp.registry.registerComponent("BuiPublicationListing", BuiPublicationListing);
 pkp.registry.registerComponent("BuiExampleTab", BuiExampleTab);
 pkp.registry.registerComponent(
   "BuiMyComponentWithDialog",
-  BuiMyComponentWithDialog
+  BuiMyComponentWithDialog,
 );
 pkp.registry.registerComponent("BuiPublicationListing", BuiPublicationListing);
 pkp.registry.registerComponent(
   "BuiFileManagerCellIthenticate",
-  BuiFileManagerCellIthenticate
+  BuiFileManagerCellIthenticate,
 );
 pkp.registry.registerComponent(
   "BuiSubmissionWizardExample",
-  BuiSubmissionWizardExample
+  BuiSubmissionWizardExample,
 );
 pkp.registry.registerComponent(
   "BuiSubmissionWizardReviewExample",
-  BuiSubmissionWizardReviewExample
+  BuiSubmissionWizardReviewExample,
 );
 
 // File manager extensions
@@ -52,7 +52,7 @@ pkp.registry.storeExtend("fileManager_SUBMISSION_FILES", (piniaContext) => {
     apiUrl,
     {
       query: ithenticateQueryParams,
-    }
+    },
   );
 
   // fetch the ithenticate status when the fileIds changes
@@ -106,7 +106,7 @@ pkp.registry.storeExtend("fileManager_SUBMISSION_FILES", (piniaContext) => {
     if (args.file) {
       console.log(
         "ithenticate status:",
-        ithenticateStatus.value?.[args.file.id] || null
+        ithenticateStatus.value?.[args.file.id] || null,
       );
     }
     return [
@@ -127,10 +127,10 @@ pkp.registry.storeExtend("fileManager_SUBMISSION_FILES", (piniaContext) => {
           openDialog({
             title: "Custom action on file",
             message: `Do you want to make custom action on file:${localize(
-              file.name
+              file.name,
             )}. With submission title ${localizeSubmission(
               workflowStore.submission.publications[0].fullTitle,
-              workflowStore.submission.locale
+              workflowStore.submission.locale,
             )}`,
             actions: [
               {
